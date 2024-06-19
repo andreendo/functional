@@ -1,0 +1,1 @@
+exports.curryExistePessoa = pessoas => nome => pessoas.findIndex(p => p.nome === nome) !== -1;

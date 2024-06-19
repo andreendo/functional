@@ -1,0 +1,19 @@
+{
+  "name": "topico3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./basic-server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "download": "^8.0.0",
+    "express": "^4.17.1",
+    "google-play-scraper": "^8.0.1"
+  }
+}

@@ -1,0 +1,17 @@
+https://medium.freecodecamp.org/functional-programming-principles-in-javascript-1b8fc6c3563f
+
+https://github.com/getify/Functional-Light-JS/blob/master/manuscript/ch11.md/#chapter-11-putting-it-all-together
+
+https://github.com/getify/Functional-Light-JS
+
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0
+
+https://medium.com/javascript-scene/curry-and-function-composition-2c208d774983
+
+https://codeburst.io/functional-programming-in-javascript-e57e7e28c0e5
+
+https://medium.freecodecamp.org/discover-functional-programming-in-javascript-with-this-thorough-introduction-a2ad9af2d645
+
+https://medium.freecodecamp.org/how-point-free-composition-will-make-you-a-better-functional-programmer-33dcb910303a
+
+https://codeburst.io/from-imperative-to-functional-javascript-5dc9e16d9184
