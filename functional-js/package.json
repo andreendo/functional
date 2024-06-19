@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "lazy.js": "^0.5.1",
     "lodash": "^4.17.21",
     "ramda": "^0.27.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
