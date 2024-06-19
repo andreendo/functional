@@ -43,3 +43,10 @@ const funcionarios = [
     }
 ];
 
+// Use o filter() para recuperar um array apenas com objetos da categoria 'gerente'
+
+// Use o reduce() para retornar o objeto com o menor id
+
+// Use o map() para colocar todos os nomes no formato UpperCase.
+
+

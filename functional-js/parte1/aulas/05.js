@@ -22,10 +22,10 @@ const menorNum = arr.reduce((prev, elem) => {
         menor = elem;
 
     return menor;
-}, 1000000);
+}, Number.POSITIVE_INFINITY);
 
 console.log(arr);
-console.log(menorNum);
+console.log(`Menor: ${menorNum}`);
 
 const soma = arr.reduce((acc, elem) => acc + elem, 0);
-console.log(soma);
+console.log(`soma: ${soma}`);

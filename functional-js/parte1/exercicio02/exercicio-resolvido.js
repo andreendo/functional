@@ -17,15 +17,24 @@ apps = apps.map(elem => {
     return elem;
 });
 
-console.log('Total de objetos deste array:', apps.length);
-console.log('A estrutura do 1.o objeto:');
-console.log(apps[0]);
+// console.log('Total de objetos deste array:', apps.length);
+// console.log('A estrutura do 1.o objeto:');
+// console.log(apps[0]);
 
 // EXERCICIO 1: use reduce() para calcular o numero total de installs para todas as apps.
 
+const NumeroTotal = apps.reduce((acumulador, elem) => acumulador + elem.installs, 0);
+// console.log(NumeroTotal);
 
 // EXERCICIO 2: use filter() para selecionar somente apps com score maior que quatro (> 4) 
 
+const MaiorScore = apps.filter(elem => elem.score > 4);
+// console.log(MaiorScore);
 
-// EXERCICIO 3: use map() para mudar o atributo appname para lowerCase
+// // EXERCICIO 3: use map() para mudar o atributo appname para lowerCase
 
+const AtributoLowerCase = apps.map(elem => {
+    elem.appname.toLowerCase();
+    return elem;
+});
+// console.log(AtributoLowerCase[0]);

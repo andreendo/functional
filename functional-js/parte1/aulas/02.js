@@ -1,15 +1,20 @@
-function bar() {
-    console.log('print bar');
+function createHello(helloMessage) {
+    return function (nome) {
+        console.log(`${helloMessage}, ${nome}!`);
+    }
 }
 
-console.log(typeof 1);
-console.log(typeof 'string');
-console.log(typeof bar);
+const olaPtBr = createHello('Ola');
+const hello = createHello('Hello');
 
-console.log(bar.toString());
+olaPtBr('Joao');
+olaPtBr('Maria');
+hello('Joao');
+hello('Maria');
 
-console.log(bar.length);
+const objeto = {};
+objeto.h1 = olaPtBr;
+objeto.h2 = hello;
 
-(function (a, b) {
-    console.log(a + b);
-})(4, 5);
+objeto.h1('Antonio');
+objeto.h2('Antonio');

@@ -43,3 +43,27 @@ const funcionarios = [
     }
 ];
 
+// Use o filter() para recuperar um array apenas com objetos da categoria 'gerente'
+const gerentes = funcionarios.filter(f => f.categoria === 'gerente');
+console.log(gerentes);
+
+// Use o reduce() para retornar o objeto com o menor id
+const menorID = funcionarios.reduce((acc, f) => {
+    if (f.id < acc.id)
+        return f;
+    else
+        return acc;
+},
+    { id: Number.POSITIVE_INFINITY }
+);
+console.log(menorID)
+
+// Use o map() para colocar todos os nomes no formato UpperCase.
+const nFunctionarios = funcionarios.map(f => {
+    f.nome = f.nome.toUpperCase();
+    return f;
+});
+
+console.log(nFunctionarios);
+
+
