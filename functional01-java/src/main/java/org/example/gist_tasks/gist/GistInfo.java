@@ -1,4 +1,4 @@
-package org.example.gist;
+package org.example.gist_tasks.gist;
 
 import java.util.List;
 

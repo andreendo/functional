@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gist_tasks;
 
 import java.net.HttpURLConnection;
 import java.net.URL;

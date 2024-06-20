@@ -1,5 +1,6 @@
-package org.example.gist;
+package org.example.gist_tasks.gist;
 
+import org.example.gist_tasks.gist.GistConnector;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

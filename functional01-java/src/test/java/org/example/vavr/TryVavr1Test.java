@@ -4,9 +4,9 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.example.vavr.Vavr1.*;
+import static org.example.vavr.TryVavr1.*;
 
-class Vavr1Test {
+class TryVavr1Test {
 
     @Test
     void testReadLinesFromFileSuccess() {

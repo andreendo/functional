@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gist_tasks;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.example.StringFunctions.*;
+import static org.example.gist_tasks.StringFunctions.*;
 
 class StringFunctionsTest {
 

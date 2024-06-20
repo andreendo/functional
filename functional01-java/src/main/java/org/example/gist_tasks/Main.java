@@ -1,6 +1,6 @@
-package org.example;
+package org.example.gist_tasks;
 
-import static org.example.FileFunctions.*;
+import static org.example.gist_tasks.FileFunctions.*;
 
 /**
  * Dado uma lista de urls para gists em um arquivo

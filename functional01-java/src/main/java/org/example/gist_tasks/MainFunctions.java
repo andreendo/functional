@@ -1,20 +1,19 @@
-package org.example;
+package org.example.gist_tasks;
 
-import io.vavr.API;
 import org.apache.commons.lang3.tuple.Pair;
-import org.example.gist.GistConnector;
-import org.example.gist.GistInfo;
+import org.example.gist_tasks.gist.GistConnector;
+import org.example.gist_tasks.gist.GistInfo;
 
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import static org.example.AssessFunctions.assess;
-import static org.example.ListFunctions.partitionByDuplicated;
-import static org.example.StringFunctions.extractGistID;
-import static org.example.UrlFunctions.isURLOnline;
-import static org.example.PrintFunctions.*;
+import static org.example.gist_tasks.AssessFunctions.assess;
+import static org.example.gist_tasks.ListFunctions.partitionByDuplicated;
+import static org.example.gist_tasks.StringFunctions.extractGistID;
+import static org.example.gist_tasks.UrlFunctions.isURLOnline;
+import static org.example.gist_tasks.PrintFunctions.*;
 
 public class MainFunctions {
 

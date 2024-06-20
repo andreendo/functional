@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gist_tasks;
 
 import java.io.IOException;
 import java.nio.file.Files;

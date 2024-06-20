@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gist_tasks;
 
 import org.apache.commons.lang3.tuple.Pair;
 

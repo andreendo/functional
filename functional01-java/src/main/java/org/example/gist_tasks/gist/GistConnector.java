@@ -1,4 +1,4 @@
-package org.example.gist;
+package org.example.gist_tasks.gist;
 
 import org.kohsuke.github.GHGistFile;
 import org.kohsuke.github.GitHub;

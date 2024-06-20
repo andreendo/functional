@@ -6,7 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Vavr1 {
+public class TryVavr1 {
 
     public static Try<List<String>> readLinesFromFile(String filePath) {
         return Try.of(() -> Files.readAllLines(Paths.get(filePath)));
@@ -14,6 +14,7 @@ public class Vavr1 {
 
     public static void main(String args[]) {
         readLinesFromFile("./urls.txt")
-                .onSuccess(urls -> System.out.println(urls));
+                .onSuccess(urls -> System.out.println(urls))
+                .onFailure(exception -> System.out.println(exception.getMessage()));
     }
 }

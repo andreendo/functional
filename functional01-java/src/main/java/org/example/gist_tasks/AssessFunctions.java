@@ -1,10 +1,10 @@
-package org.example;
+package org.example.gist_tasks;
 
-import org.example.gist.GistInfo;
+import org.example.gist_tasks.gist.GistInfo;
 
 import java.util.Arrays;
 
-import static org.example.StringFunctions.countWords;
+import static org.example.gist_tasks.StringFunctions.countWords;
 
 public class AssessFunctions {
     public static Boolean assess(GistInfo gistInfo) {

@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gist_tasks;
 
 import org.junit.jupiter.api.Test;
 
@@ -6,7 +6,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import static org.example.ListFunctions.partitionByDuplicated;
+import static org.example.gist_tasks.ListFunctions.partitionByDuplicated;
 
 class ListFunctionsTest {
 
