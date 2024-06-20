@@ -1,0 +1,3 @@
+** persistindo dados
+	- Biblioteca node-persist
+	- Arquivos persist-1 to persist-4.js

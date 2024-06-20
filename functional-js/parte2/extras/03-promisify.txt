@@ -1,0 +1,23 @@
+** util.promisify - recebe função estilo callback, e retorna uma versão usando Promises
+
+	- Exercício com fs.stat (promisify.js)
+
+//*********************************************************//
+const util = require('util');
+const fs = require('fs');
+
+fs.stat('.', (err, stats) => {
+    if (err) throw err;
+
+    console.log(stats);
+});
+
+const statP = util.promisify(fs.stat);
+
+async function main() {
+    const stats = await statP('./a.txt');
+    console.log(stats);
+}
+
+main().catch(console.error);
+//*********************************************************//

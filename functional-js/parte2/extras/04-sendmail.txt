@@ -1,0 +1,6 @@
+------------------------------------------------
+** Enviando e-mails usando node
+	- usar qq servidor de email
+	- para testes, criar em https://ethereal.email
+	- nodemailer
+	- send-mail.js

@@ -1,0 +1,99 @@
+** Timers
+	- Executar em uma próxima iteração do event loop (após I/O callbacks if exist)	
+		- setImmediate (1, 2 seguidos) - Fila
+
+//*********************************************************//
+setImmediate(() => {
+    console.log('setImmediate 1');
+});
+
+setImmediate(() => {
+    console.log('setImmediate 2');
+});
+//*********************************************************//
+
+        	- process.nextTick - no próximo tick do event loop (assim q o callback atual terminar de executar)
+
+//*********************************************************//
+process.nextTick(() => {
+    console.log('nextTick 1');
+});
+
+// add an setImmediate here
+
+process.nextTick(() => {
+    console.log('nextTick 2');
+});
+//*********************************************************//
+
+	- setTimeout
+
+//*********************************************************//
+setTimeout(() => {
+    console.log('timeout1 2000');
+}, 2000);
+
+setTimeout(() => {
+    console.log('timeout2 1000');
+}, 1000);
+
+setTimeout(() => {
+    console.log('timeout3 1000');
+}, 1000);
+//*********************************************************//
+
+	- setInterval
+		- counter
+		- clearInterval - dp de 14s
+			- clearTimeout, clearImmediate
+
+//*********************************************************//
+let counter = 0;
+const intervalID = setInterval(() => {
+    console.log('interval', ++counter);
+}, 1000);
+
+setTimeout(() => {
+    clearInterval(intervalID);
+    console.log('timeout to end interval');
+}, 12000);
+//*********************************************************//
+
+- Exercício: 
+	- função que soma n números em um array e retorna promise que resolve na próxima iteração do event loop
+		- setImmediate
+	
+//*********************************************************//
+function asyncSum(arr) {
+    return new Promise((resolve, reject) => {
+        const sum = arr.reduce((acc, el) => acc + el, 0);
+        setImmediate(() => {
+            resolve(sum);
+        });
+    });
+}
+//*********************************************************//
+
+	- função que acha o primeiro numero negativo em um array e retorna promise com resultado que resolve na próxima iteração do event loop
+		- process.nextTick
+
+//*********************************************************//
+function firstNegative(arr) {
+    return new Promise((resolve, reject) => {
+        const first = arr.find(el => el < 0);
+        process.nextTick(() => {
+            resolve(first);
+        });
+    });
+}
+//*********************************************************//
+
+	- função que retorna uma promise que resolve em X ms
+
+//*********************************************************//
+function waitFor(time) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, time);
+    });
+}
+//*********************************************************//
