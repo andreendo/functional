@@ -1,5 +1,6 @@
-const fs = require('fs');
-const Lazy = require('lazy.js');
+import * as fs from 'node:fs';
+import Lazy from 'lazy.js';
+
 
 const filePath = './resources/overseas-trade-indexes-March-2024-quarter-provisional.csv';
 
@@ -8,7 +9,7 @@ const content = fs.readFileSync(filePath, 'utf-8');
 
 //------------
 // First 10 lines
-lines = content.split("\n");
+const lines = content.split("\n");
 const firstTen = [];
 for (let i = 1; i <= 10; i++) {
     firstTen.push(lines[i]);

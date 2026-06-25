@@ -8,4 +8,4 @@ console.log(typeof bar);
 
 console.log(bar.toString());
 
-console.log(bar.length);
+console.log(bar.length); // número de parâmetros que a função espera receber

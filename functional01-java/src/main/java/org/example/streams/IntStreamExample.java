@@ -15,7 +15,7 @@ public class IntStreamExample {
         // 5 primeiros números múltiplos de 2 e 11
         IntStream.iterate(1, x -> x + 1)
                 .filter(x -> x % 2 == 0 && x % 11 == 0)
-                .limit(5)
+                .limit(50)
                 .boxed()
                 .forEach(x -> System.out.println(x));
     }

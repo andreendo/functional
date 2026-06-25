@@ -1,11 +1,12 @@
-const R = require('ramda');
+import { curry, __ } from 'ramda';
+
 // -------------------------------------------- //
 // (1) curry functions
-const add = R.curry((num1, num2) => num1 + num2);
+const add = curry((num1, num2) => num1 + num2);
 
-const multiply = R.curry((num1, num2) => num1 * num2);
+const multiply = curry((num1, num2) => num1 * num2);
 
-const createPerson = R.curry((name, genre, age) => ({ name, genre, age }));
+const createPerson = curry((name, genre, age) => ({ name, genre, age }));
 
 // -------------------------------------------- //
 // (2) using curried functions
@@ -34,16 +35,16 @@ console.log(arr.map(addTen).map(double));
 // (3) using curried functions with R.__
 
 // Male
-const createMale = createPerson(R.__, 'M', R.__);
+const createMale = createPerson(__, 'M', __);
 console.log(createMale('Carlos', 34));
 console.log(createMale('Andre', 36));
 
 // 25 years old
-const create25Person = createPerson(R.__, R.__, 25);
+const create25Person = createPerson(__, __, 25);
 console.log(create25Person('Carlos Joao', 'M'));
 console.log(create25Person('Maria J', 'F'));
 
 // Female and 30 years
-const createFemale30Years = createPerson(R.__, 'F', 30);
+const createFemale30Years = createPerson(__, 'F', 30);
 console.log(createFemale30Years('Maria'));
 console.log(createFemale30Years('Flavia'));

@@ -1,4 +1,4 @@
-const Lazy = require('lazy.js');
+import Lazy from 'lazy.js';
 
 
 const multiplesOfFive = Lazy.generate(index => (index + 1) * 5);

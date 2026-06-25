@@ -1,7 +1,7 @@
 // Este codigo faz a leitura de dados para apps coletadas do Google Play
 
-const fs = require('fs');
-const csvparse = require('csv-parse/lib/sync');
+import fs from 'node:fs';
+import { parse as csvparse } from 'csv-parse/sync';
 
 // Le cada linha do arquivo csv como um objeto e armazena no array 'app'
 let apps = csvparse(fs.readFileSync('./gplaydata.csv', 'utf-8'), {

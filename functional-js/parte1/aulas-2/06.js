@@ -1,11 +1,15 @@
+import * as R from 'ramda';
+
+
 /**
- * Alg. de Eudoxo para raiz quadrada de a
+ * Algoritmo de Eudoxo
+ *  
+ * Objetivo: aproximar a raiz quadrada de a
  * passo 1: x0 ← a/2 
  * passo 2: x ← (x0 + a/x0)/2
  * passo 3: x0 ← x
  * passo 4: volte ao passo 2
  */
-const R = require('ramda');
 
 function* approximate(a) {
     let x0 = a / 2;

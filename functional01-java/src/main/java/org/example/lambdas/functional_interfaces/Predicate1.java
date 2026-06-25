@@ -17,5 +17,15 @@ public class Predicate1 {
                 .collect(Collectors.toList());
 
         System.out.println(res);
+        /*
+        Predicate<Integer> positivo = (num -> num >= 0);
+        Predicate<Integer> par = (num -> num % 2 == 0);
+
+        var res = nums.stream()
+                .filter(positivo.and(par))
+                .collect(Collectors.toList());
+
+        System.out.println(res);
+         */
     }
 }

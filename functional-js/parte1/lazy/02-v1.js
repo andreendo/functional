@@ -1,4 +1,5 @@
-const Lazy = require('lazy.js');
+import Lazy from 'lazy.js';
+
 
 // const filePath = './resources/annual-enterprise-survey-2021-financial-year-provisional-csv.csv';
 // const filePath = './resources/overseas-trade-indexes-March-2024-quarter-provisional.csv';
@@ -9,5 +10,5 @@ Lazy.readFile(filePath)
     .take(5)
     .each(l => {
         l.split(",");
-        // console.log(l);
+        console.log(l);
     });

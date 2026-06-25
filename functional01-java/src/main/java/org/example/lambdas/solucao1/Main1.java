@@ -12,6 +12,8 @@ public class Main1 {
         lista1.adicionar("valor2");
         lista1.adicionar("valor3");
 
+        lista1.paraCada(valor -> System.out.println(valor));
+
 //        lista1.paraCada(new IParaCada() {
 //            @Override
 //            public void acao(String valor) {
@@ -23,7 +25,7 @@ public class Main1 {
 //            System.out.println(">> " + valor);
 //        });
 
-        lista1.paraCada(valor -> System.out.println(">> " + valor));
+//        lista1.paraCada(valor -> System.out.println(">> " + valor));
 
     }
 

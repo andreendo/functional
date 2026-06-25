@@ -1,4 +1,5 @@
-const R = require('ramda');
+import * as R from 'ramda';
+
 
 const add = R.curry((num1, num2) => num1 + num2);
 const multiply = R.curry((num1, num2) => num1 * num2);
@@ -27,7 +28,7 @@ const createPerson = R.curry((name, genre, age) => ({ name, genre, age }));
 
 const changeAgeByYearOfBirth = person => {
     const p = R.clone(person);
-    p.yearOfBirth = 2020 - p.age;
+    p.yearOfBirth = 2026 - p.age;
     delete p.age;
     return p;
 }

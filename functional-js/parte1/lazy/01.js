@@ -1,4 +1,5 @@
-const Lazy = require('lazy.js');
+import Lazy from 'lazy.js';
+
 
 function approx(a) {
     return function* () {

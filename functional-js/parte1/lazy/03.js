@@ -1,7 +1,8 @@
-const Lazy = require('lazy.js');
+import Lazy from 'lazy.js';
 
-// link deste site
-const url = 'http://www.tesourotransparente.gov.br/ckan/dataset/f6e65eb2-00b4-4a1d-9a81-6fe694210fea/resource/bcdd254c-6f25-4dad-af5d-7e944ebe512a/download/custos-por-itens-de-custos-depreciacaoCustos-por-Itens-de-Custos---Depreciacao.csv';
+
+// link deste site - não funciona com https
+const url = 'https://www.tesourotransparente.gov.br/ckan/dataset/f6e65eb2-00b4-4a1d-9a81-6fe694210fea/resource/2d4b3f9a-1694-448f-b6a9-454f8d03343b/download/custos-por-itens-de-custos-depreciacaocustos-por-itens-de-custos---depreciacao.csv';
 
 Lazy.makeHttpRequest(url)
     .lines()

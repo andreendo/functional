@@ -1,4 +1,5 @@
-const R = require('ramda');
+import * as R from 'ramda';
+
 
 function* fibonacci() {
     let a0 = 1;
@@ -13,7 +14,7 @@ function* fibonacci() {
     }
 }
 
-const fib = fibonacci();
+const fib = fibonacci(); // instancia um objeto generator/iterator
 
 for (let i = 1; i<= 8; i++)
     console.log(fib.next().value)

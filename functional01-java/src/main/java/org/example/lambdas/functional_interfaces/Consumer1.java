@@ -13,5 +13,6 @@ public class Consumer1 {
         Consumer<Integer> printNumber = number -> System.out.println("Num: " + number);
 
         nums.forEach(printNumber);
+        //nums.forEach(printNumber);
     }
 }

@@ -1,4 +1,4 @@
-const Lazy = require('lazy.js');
+import Lazy from 'lazy.js';
 
 
 Lazy.readFile('./resources/server.log')
