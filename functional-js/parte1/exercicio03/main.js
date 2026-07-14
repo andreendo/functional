@@ -1,8 +1,8 @@
-const fs = require('fs');
-const { DOMParser } = require('xmldom');
-const R = require('ramda');
+import fs from 'node:fs';
+import { DOMParser } from 'xmldom';
+import * as R from 'ramda';
 
-const { isValid, elementsToArray, getGitHubProject } = require('./xmlfilter');
+import { isValid, elementsToArray, getGitHubProject } from './xmlfilter.js';
 
 // efetua o processamento do xml e armazena a estrutura no objeto 'document'
 const document = new DOMParser().parseFromString(fs.readFileSync('res/f-droid.xml', 'utf-8'));

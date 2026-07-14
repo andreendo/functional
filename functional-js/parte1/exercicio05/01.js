@@ -7,8 +7,8 @@ CT1: <Entrada: 10:20, Saída: 10:30; 10 minutos, valor minuto: 0.40, pagamento: 
 CT2: <Entrada: 8:35, Saída: 17:30; 535 minutos, valor minuto: 0.35, pagamento: R$ 187.25> 
 */
 
-const readline = require('readline');
-const R = require('ramda');
+import readline from 'node:readline';
+import * as R from 'ramda';
 
 
 const rl = readline.createInterface({

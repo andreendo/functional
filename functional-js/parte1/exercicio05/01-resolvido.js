@@ -7,8 +7,9 @@ CT1: <Entrada: 10:20, Saída: 10:30; 10 minutos, valor minuto: 0.40, pagamento: 
 CT2: <Entrada: 8:35, Saída: 17:30; 535 minutos, valor minuto: 0.35, pagamento: R$ 187.25> 
 */
 
-const readline = require('readline');
-const R = require('ramda');
+import readline from 'node:readline';
+import * as R from 'ramda';
+
 
 const processarEntradas = input => {
     const ent = input.unEntrada.split(":");
@@ -32,7 +33,7 @@ const calcularMinutosTrabalhados = ({ entrada, saida }) => {
 
 const addValorMinuto = R.curry(
     (dados, valor) => {
-        cDados = R.clone(dados);
+        const cDados = R.clone(dados);
         cDados.valorMinuto = valor;
         return cDados;
     }
@@ -66,7 +67,7 @@ const main = R.pipe(
     imprimir
 );
 
-
+// entry point
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,

@@ -1,23 +1,25 @@
-const R = require('ramda');
+import * as R from 'ramda';
 
-const contentOfTag = R.curry(
+export const contentOfTag = R.curry(
     (xmlNode, tagName) => xmlNode.getElementsByTagName(tagName)[0].textContent
 );
 
-const contentOfSource = contentOfTag(R.__, 'source');
-const contentOfAdded = contentOfTag(R.__, 'added');
-const contentOfUpdated = contentOfTag(R.__, 'lastupdated');
-const contentOfID = contentOfTag(R.__, 'id');
-const getGitHubProject = xmlNode => contentOfSource(xmlNode).replace('https://github.com/', '');
+export const contentOfSource = contentOfTag(R.__, 'source');
 
-const elementsToArray = nodes => {
+export const contentOfAdded = contentOfTag(R.__, 'added');
+export const contentOfUpdated = contentOfTag(R.__, 'lastupdated');
+export const contentOfID = contentOfTag(R.__, 'id');
+
+export const getGitHubProject = xmlNode => contentOfSource(xmlNode).replace('https://github.com/', '');
+
+export const elementsToArray = nodes => {
     const arr = [];
     for (let i = 0; i < nodes.length; i++)
         arr.push(nodes[i]);
     return arr;
 };
 
-const isValid = R.curry(
+export const isValid = R.curry(
     (app, addedAfterYear, updatedAfterYear) => {
         if (!contentOfSource(app).includes('github.com'))
             return false;
@@ -33,13 +35,3 @@ const isValid = R.curry(
         return true;
     }
 );
-
-module.exports = {
-    isValid,
-    elementsToArray,
-    getGitHubProject,
-    contentOfSource,
-    contentOfID,
-    contentOfAdded,
-    contentOfUpdated
-};

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "type": "module",
   "directories": {
     "lib": "lib"
   },
@@ -13,6 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "ramda": "^0.27.1",
-    "xmldom": "^0.3.0"
+    "xmldom": "^0.6.0"
   }
 }

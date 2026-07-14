@@ -1,4 +1,4 @@
-const R = require('ramda');
+import * as R from 'ramda';
 
 function isEven(number) {
     const n = R.clone(number);
@@ -68,10 +68,10 @@ const arr = [-1, 50, 5, 10, -8, 20, 25, 0, 100, 14, -123];
 console.log( arr.map(mapToNumberObject) );
 
 // Exercí­cio 4: use R.pipe para compor as funções: isEven, positive, isOdd, negative, 
-    // isZero, e isPrime. Teste a funções composta com um funções objeto.
+    // isZero, e isPrime. Teste a função composta com um objeto.
 
 const pipedFunctions = R.pipe(isEven, positive, isOdd, negative, isZero, isPrime)
-console.log(pipedFunctions({value: 7}))
+console.log(pipedFunctions({ value: 7 }));
 
 // Exercí­cio 5: use a funções composta do Ex. 4 para transformar os funções em 'arr'
 
