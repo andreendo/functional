@@ -1,4 +1,5 @@
-const download = require('download');
+import download from 'download';
+
 
 (async () => {
     const start = new Date();

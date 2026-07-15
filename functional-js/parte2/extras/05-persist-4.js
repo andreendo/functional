@@ -1,4 +1,5 @@
-const storage = require('node-persist');
+import storage from 'node-persist';
+
 
 async function main() {
     await storage.init();

@@ -1,4 +1,4 @@
-function asyncSum(arr) {
+export function asyncSum(arr) {
     return new Promise((resolve, reject) => {
         const sum = arr.reduce((acc, el) => acc + el, 0);
         setImmediate(() => {
@@ -7,7 +7,7 @@ function asyncSum(arr) {
     });
 }
 
-function firstNegative(arr) {
+export function firstNegative(arr) {
     return new Promise((resolve, reject) => {
         const first = arr.find(el => el < 0);
         process.nextTick(() => {
@@ -16,14 +16,8 @@ function firstNegative(arr) {
     });
 }
 
-function waitFor(time) {
+export function waitFor(time) {
     return new Promise((resolve, reject) => {
         setTimeout(resolve, time);
     });
-}
-
-module.exports = {
-    asyncSum,
-    firstNegative,
-    waitFor
 }

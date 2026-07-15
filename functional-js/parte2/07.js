@@ -12,6 +12,9 @@ function divisao({ a, b }) {
         return Promise.resolve(a / b);
 }
 
+const someA = 10;
+const someB = 10;
+
 checarPositivo(someA, someB)
     .then(divisao)
     .then(res => {

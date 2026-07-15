@@ -1,4 +1,5 @@
-const nodemailer = require('nodemailer');
+import nodemailer from 'nodemailer';
+
 
 // criar uma conta de teste em https://ethereal.email
 
@@ -7,8 +8,8 @@ async function main() {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'olin.padberg@ethereal.email',
-            pass: 'Npsf72CTKWZM6MBQqB'
+            user: 'damion36@ethereal.email',
+            pass: 'EqZh6YbCf4VBDDyVEB'
         }
     });
 

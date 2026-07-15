@@ -1,8 +1,9 @@
-const fsp = require('fs').promises;
+import { readFile } from 'node:fs/promises';
+
 
 (async () => {
     try {
-        const dados = await fsp.readFile('./nao-existe.txt', 'utf-8');
+        const dados = await readFile('./nao-existe.txt', 'utf-8');
         console.log(dados);    
     } catch(err) {
         // tratar a excecao

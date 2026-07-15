@@ -1,5 +1,7 @@
 // https://www.npmjs.com/package/download
-const download = require('download');
+
+import download from 'download';
+
 
 (async () => {
     const start = new Date();

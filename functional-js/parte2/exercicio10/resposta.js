@@ -1,5 +1,6 @@
-const readFile = require('fs').promises.readFile;
-const nodemailer = require('nodemailer');
+import { readFile } from 'fs/promises';
+import nodemailer from 'nodemailer';
+
 
 function waitFor(time) {
     return new Promise((resolve, reject) => {
@@ -12,8 +13,8 @@ async function main() {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-            user: 'olin.padberg@ethereal.email',
-            pass: 'Npsf72CTKWZM6MBQqB'
+            user: 'damion36@ethereal.email',
+            pass: 'EqZh6YbCf4VBDDyVEB'
         }
     });
 

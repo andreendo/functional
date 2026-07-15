@@ -1,4 +1,5 @@
-const axios = require('axios').default;
+import axios from 'axios';
+
 
 axios.post('http://localhost:3000/books', {
     ID: 3,

@@ -1,5 +1,6 @@
-const fs = require('fs');
-const express = require('express');
+import { readFile } from 'node:fs';
+import express from 'express';
+
 
 const app = express();
 
@@ -7,7 +8,7 @@ app.get('/', (req, res) => {
     console.log('some request');
 
     // leitura async libera o event loop para processar outras requisicoes
-    fs.readFile('./html/basic.html', 'utf-8', (err, data) => {
+    readFile('./html/basic.html', 'utf-8', (err, data) => {
         if (err) {
             res.send(err);
             return;

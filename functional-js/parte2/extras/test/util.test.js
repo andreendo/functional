@@ -1,4 +1,6 @@
-const { somaAsync, primeiroNegativo, esperarPor } = require('../lib/utils');
+import { jest } from '@jest/globals';
+import { somaAsync, primeiroNegativo, esperarPor } from '../lib/utils.js';
+
 
 describe('Utils', () => {
     test('somaAsync', (done) => {

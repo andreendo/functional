@@ -1,6 +1,7 @@
-const fs = require('fs');
+import { createReadStream } from 'node:fs';
 
-const readStream = fs.createReadStream('./res/1MB-file.txt', { encoding: 'utf8' });
+
+const readStream = createReadStream('./res/1MB-file.txt', { encoding: 'utf8', highWaterMark: 1024 * 10 }); // 10kb
 
 // o arquivo eh lido por partes, i.e. 'chunks'
 // a cada leitura de parte dos dados, o evento 'data' eh disparado

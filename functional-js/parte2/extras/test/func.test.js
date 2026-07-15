@@ -1,4 +1,7 @@
-const { asyncSum, firstNegative, waitFor } = require('../lib/func');
+import { jest } from '@jest/globals';
+import { asyncSum, firstNegative, waitFor } from '../lib/func.js';
+
+
 describe('Func', () => {
     describe('asyncSum', () => {
         it('should sum async', (done) => {

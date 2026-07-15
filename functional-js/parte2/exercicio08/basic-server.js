@@ -1,5 +1,6 @@
-const fs = require('fs');
-const express = require('express');
+import fs from 'node:fs';
+import express from 'express';
+
 
 const app = express();
 

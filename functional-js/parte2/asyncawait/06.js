@@ -1,7 +1,8 @@
-const fsp = require('fs').promises;
+import { readFile } from 'node:fs/promises';
+
 
 (async () => {
-    const dados = await fsp.readFile('../ex1.txt', 'utf-8');
+    const dados = await readFile('../ex1.txt', 'utf-8');
     console.log(dados);
 })();
 

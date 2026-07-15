@@ -1,18 +1,19 @@
-const fs = require('fs');
+import { readFile } from 'node:fs';
 
-fs.readFile('ex1.txt', 'utf-8', (err, data) => {
+
+readFile('ex1.txt', 'utf-8', (err, data) => {
     if (err) throw err;
 
     console.log(data);
 });
 
-fs.readFile('ex2.txt', 'utf-8', (err, data) => {
+readFile('ex2.txt', 'utf-8', (err, data) => {
     if (err) throw err;
 
     console.log(data);
 });
 
-fs.readFile('ex3.txt', 'utf-8', (err, data) => {
+readFile('ex3.txt', 'utf-8', (err, data) => {
     if (err) throw err;
 
     console.log(data);

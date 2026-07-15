@@ -1,4 +1,5 @@
-const fsp = require('fs').promises;
+import { readFile } from 'node:fs/promises';
+
 
 const p1 = Promise.resolve(3);
 const p2 = new Promise((resolve, reject) =>

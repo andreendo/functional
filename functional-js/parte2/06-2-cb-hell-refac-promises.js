@@ -1,11 +1,12 @@
-const fsp = require('fs').promises;
+import { readFile } from 'node:fs/promises';
 
-fsp.readFile('f1.txt', 'utf-8')
+
+readFile('f1.txt', 'utf-8')
     .then((fileName2) => {
-        return fsp.readFile(fileName2, 'utf-8');
+        return readFile(fileName2, 'utf-8');
     })
     .then((fileName3) => {
-        return fsp.readFile(fileName3, 'utf-8');
+        return readFile(fileName3, 'utf-8');
     })
     .then((fileContent) => {
         console.log('Conteudo: ', fileContent);

@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'node:fs';
 
 fs.readFile('f1.txt', 'utf-8', (err, fileName2) => {
     if (err) throw err;
