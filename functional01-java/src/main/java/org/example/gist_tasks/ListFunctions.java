@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 public class ListFunctions {
 
+    // Tipo Function<T1 (argumento), T2 (retorno)>
     public static Function<List<String>, Pair<List<String>, List<String>>> partitionByDuplicated = urls -> {
         // use a frequency map
         Map<String, Long> frequencyMap = urls.stream()
@@ -17,7 +18,7 @@ public class ListFunctions {
 
         var unique = frequencyMap.entrySet().stream()
                 .filter(entry -> entry.getValue() == 1) // urls that appeared once
-                .map(entry -> entry.getKey())      // just the strings
+                .map(entry -> entry.getKey())           // just the strings
 //                .map(Map.Entry::getKey)
                 .toList();
 

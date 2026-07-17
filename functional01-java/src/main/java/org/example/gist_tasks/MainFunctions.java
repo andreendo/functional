@@ -19,13 +19,13 @@ public class MainFunctions {
 
     public static void processFileLines(List<String> lines) {
         // function composition
-        partitionByDuplicated
-                .andThen(handleDuplicates)
-                .andThen(checkOnlineUrls)
-                .andThen(extractGistIdFromUrls)
-                .andThen(retrieveGistInfo)
+        partitionByDuplicated                       // ret: Pair<List<String>, List<String>>
+                .andThen(handleDuplicates)          // ret: List<String>
+                .andThen(checkOnlineUrls)           // ret: List<String>
+                .andThen(extractGistIdFromUrls)     // ret: List<String>
+                .andThen(retrieveGistInfo)          // ret: List<Pair<String, GistInfo>
                 .andThen(assessGistInfo)
-                .apply(lines);
+                .apply(lines);      // chama a função composta
     }
 
     static Function<Pair<List<String>, List<String>>, List<String>> handleDuplicates = pair -> {
@@ -34,7 +34,7 @@ public class MainFunctions {
     };
 
     static Function<List<String>, List<String>> checkOnlineUrls = urls -> {
-        Map<Boolean, List<String>> isOnlineUrls = urls.parallelStream()         // PARALLEL
+        Map<Boolean, List<String>> isOnlineUrls = urls.stream()         // PARALLEL
                 .collect(Collectors.partitioningBy(url -> isURLOnline(url)));
 
         handleList("Offline urls", isOnlineUrls.get(false));
@@ -50,13 +50,13 @@ public class MainFunctions {
 
         handleList("URL without GIST ID", hasGistID.get(false));
 
-        return hasGistID.get(true);
+        return hasGistID.get(true); // retorno somente as urls com gist id válido
     };
 
     static Function<List<String>, List<Pair<String, GistInfo>>> retrieveGistInfo = urls -> {
         GistConnector connector = new GistConnector();
 
-        var urlGistInfoPairs = urls.parallelStream()                            // PARALLEL
+        var urlGistInfoPairs = urls.stream()                            // PARALLEL
                 .map(url -> Pair.of(url, connector.retrieve(extractGistID(url))))
                 .collect(Collectors.toList());
 
@@ -68,7 +68,9 @@ public class MainFunctions {
         handleList("URL without GIST Info", urlsWithoutInfo);
 
         return urlGistInfoPairs.stream()
+                // filtrar apenas os que recuperou gist info
                 .filter(pair -> pair.getRight().isPresent())
+                // mapear para par <url, gistInfo>
                 .map(pair -> Pair.of(pair.getLeft(), pair.getRight().get()))
                 .collect(Collectors.toList());
     };
@@ -79,11 +81,11 @@ public class MainFunctions {
                 .collect(Collectors.partitioningBy(pair -> assess(pair.getRight())));
 
         handleList(
-                "URLs with GIST Info -> Incorrect",
+                "URLs with GIST Info -> Incorrect submission",
                 assessedUrls.get(false).stream().map(Pair::getLeft).toList()
         );
         handleList(
-                "URLs with GIST Info -> Correct",
+                "URLs with GIST Info -> Correct submission",
                 assessedUrls.get(true).stream().map(Pair::getLeft).toList()
         );
 

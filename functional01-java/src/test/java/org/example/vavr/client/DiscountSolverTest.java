@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DiscountSolverTest {
 
-    DiscountSolver solver = new DiscountSolver(new ClientRepo());
+    final DiscountSolver solver = new DiscountSolver(new ClientRepo());
 
     @Test
     void testNullListOfIds() {

@@ -5,7 +5,7 @@ import static org.example.gist_tasks.FileFunctions.*;
 /**
  * Dado uma lista de urls para gists em um arquivo
  * - remover os duplicados (lista separada)
- * - checar as urls existem (lista inexistentes)
+ * - checar se as urls existem (lista inexistentes)
  * - verificar a quantidade de arquivos no gist
  * - contar ocorrências de keywords
  */

@@ -7,7 +7,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 import static org.junit.jupiter.api.Assertions.*;
 
     class LoginControllerTest {
-    LoginController loginController = new LoginController(new UserDAO());
+
+    final LoginController loginController = new LoginController(new UserDAO());
+
     @ParameterizedTest
     @CsvSource({
             ",,Invalid Name",

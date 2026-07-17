@@ -23,14 +23,23 @@ public class GistConnector {
         github = GitHubBuilder.fromPropertyFile("./.github").build();
     }
 
+    /**
+     *
+     * @param gistID
+     * @return Optional vazio se acontecer algum erro no acesso
+     *         Optional com o objeto GistInfo (#arqs, lista com conteúdo de cada arq)
+     */
     public Optional<GistInfo> retrieve(String gistID) {
         try {
             if (github == null) start();
+
             var gistFiles = github.getGist(gistID).getFiles().values();
-            return Optional.of(new GistInfo(
+            return Optional.of(
+                new GistInfo(
                     gistFiles.size(),
                     gistFiles.stream().map(GHGistFile::getContent).toList()
-            ));
+                )
+            );
         } catch (IOException e) {
             // return empty if some error occurs.
             return Optional.empty();

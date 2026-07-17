@@ -48,14 +48,14 @@ public class DiscountSolver {
 
     public Either<String, List<Client>> retrieveClientObjects (List<Integer> ids) {
         var clients = ids.stream()
-                .map(clientRepo::get)
-                .filter(Optional::isPresent)
-                .map(Optional::get)
+                .map(clientRepo::get)        // gerar uma lista de objetos Optional<Client>
+                .filter(Optional::isPresent) // filtra somente os Optional<Client> com valores
+                .map(Optional::get)          // gerar uma lista de objetos Client
                 .collect(Collectors.toList());
 
         return Match(clients.size()).of(
-                Case($(ids.size()), Either.right(clients)),
-                Case($(), Either.left("Invalid client ID"))
+                Case($(ids.size()), Either.right(clients)),  // todos os ids estão no BD
+                Case($(), Either.left("Invalid client ID"))  // c.c.
         );
     }
 

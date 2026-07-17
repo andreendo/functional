@@ -7,6 +7,11 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Grader.process() recebe uma lista de estudantes (nome, score),
+ * faz validações, e se tiver tudo certo calcula o conceito (range)
+ * com base no score
+ */
 class GraderTest {
 
     @Test

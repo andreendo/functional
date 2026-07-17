@@ -14,7 +14,7 @@ public class Function1 {
         // R - String -> return
         Function<Integer, String> toString = number -> "Num: " + number;
 
-        var res = nums.stream().map(toString).collect(Collectors.toList());
+        var res = nums.stream().map(toString).toList();
         System.out.println(res);
     }
 }

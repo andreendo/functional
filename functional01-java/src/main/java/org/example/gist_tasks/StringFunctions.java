@@ -10,12 +10,12 @@ import java.util.stream.Collectors;
 public class StringFunctions {
 
     public static String extractGistID(String url) {
-        // Define a regex pattern to match the ID at the end of the URL
+        // Define uma expressão regular que captura o final da url
         String regex = ".*/([a-fA-F0-9]{32})$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(url);
 
-        // If the pattern matches, return the captured ID
+        // Se achar o padrão, retornar o valor
         if (matcher.find()) {
             return matcher.group(1);
         } else {
@@ -26,8 +26,8 @@ public class StringFunctions {
     public static Map<String, Integer> countWords(String text, List<String> words) {
         return words.stream()   // may be parallel
                 .collect(Collectors.toMap(
-                            word -> word,   // key mapper
-                            word -> (int) countOccurrences(text, word) //value mapper
+                            word -> word,   // lambda para definir a chave
+                            word -> (int) countOccurrences(text, word) // lambda para valor
                         )
                 );
     }

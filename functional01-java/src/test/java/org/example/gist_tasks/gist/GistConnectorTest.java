@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GistConnectorTest {
 
-    GistConnector conn = new GistConnector();
+    private final GistConnector conn = new GistConnector();
 
     @Test
     void retrieveSuccessfully() {

@@ -8,11 +8,12 @@ import java.util.List;
 public class Grader {
 
     public static Either<String, List<Student>> process(List<Student> students) {
-        return validateList(students)
-                .flatMap(Grader::validateStudents)
+        return validateList(students)               // retorna Either<String, List<Student>>
+                .flatMap(Grader::validateStudents)  // flatMap retorna Either<String, List<Student>>
                 .map(Grader::gradeStudents);
     }
 
+    // usando o operador ternário
     static Either<String, List<Student>> validateList(List<Student> list) {
         return list == null || list.isEmpty()
             ? Either.left("null or empty list")
@@ -60,12 +61,21 @@ public class Grader {
                 .toList();
     }
 
-    static Student gradeStudent(Student student) {
+    static Student gradeStudentV0(Student student) {
         return Match(student.score()).of(
                 Case($(score -> score >= 90), () -> student.withRange("A")),
                 Case($(score -> score >= 70), () -> student.withRange("B")),
                 Case($(score -> score >= 50), () -> student.withRange("C")),
                 Case($(), () -> student.withRange("F"))
         );
+    }
+
+    static Student gradeStudent(Student student) {
+        return switch((Integer) student.score()) {
+            case Integer score when score >= 90 -> student.withRange("A");
+            case Integer score when score >= 70 -> student.withRange("B");
+            case Integer score  when score >= 50 -> student.withRange("C");
+            default -> student.withRange("F");
+        };
     }
 }

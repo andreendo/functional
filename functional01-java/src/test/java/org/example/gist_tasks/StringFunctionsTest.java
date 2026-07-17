@@ -29,7 +29,7 @@ class StringFunctionsTest {
             "https://gist.github.com/Rafaelsonsons/0aeadf7c2869173",
             "https"
     })
-    public void testExtractGistIDError(String url) {
+    public void testExtractGistIDInvalid(String url) {
         assertEquals("INVALID", extractGistID(url));
     }
 

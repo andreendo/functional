@@ -20,8 +20,14 @@ public class StreamExample1 {
         var random = new Random();
         var fiveRandomNumbers = random.ints()
                 .limit(5)
-                .boxed()
+                .boxed()            // encapsula tipo int em objetos Integer
                 .collect(Collectors.toList());
         System.out.println(fiveRandomNumbers);
+
+        var sevenRandomNumbers = random.ints()
+                .boxed()
+                .limit(7)
+                .toList();
+        System.out.println(sevenRandomNumbers);
     }
 }
